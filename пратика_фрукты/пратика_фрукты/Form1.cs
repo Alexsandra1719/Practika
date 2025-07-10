@@ -31,7 +31,7 @@ namespace FruityViceApp
 
         private async void btnLoadAll_Click(object sender, EventArgs e)
         {
-        
+            await LoadAndDisplayFruits(AllFruitsApiUrl);
         }
 
         private async System.Threading.Tasks.Task LoadAndDisplayFruits(string apiUrl)
