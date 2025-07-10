@@ -9,7 +9,7 @@ namespace FruityViceApp
     public partial class MainForm : Form
     {
         private const string OrderApiUrl = "https://www.fruityvice.com/api/fruit/order/";
-
+        private const string AllFruitsApiUrl = "https://www.fruityvice.com/api/fruit/all";
 
         public MainForm()
         {
