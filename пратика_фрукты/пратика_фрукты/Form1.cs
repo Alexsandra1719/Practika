@@ -80,18 +80,33 @@ namespace FruityViceApp
 
 
 
-
-
-
         private void lstFruits_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            if (lstFruits.SelectedIndex == -1 || !(lstFruits.Tag is List<Fruit> fruits))
+                return;
+
+            Fruit selectedFruit = fruits[lstFruits.SelectedIndex];
+            DisplayFruitDetails(selectedFruit);
+
         }
 
-        
+        private void DisplayFruitDetails(Fruit fruit)
+        {
+            txtDetails.Text = $"Название: {fruit.Name}\r\n" +
+                             $"Семейство: {fruit.Family}\r\n" +
+                             $"Род: {fruit.Genus}\r\n" +
+                             $"Калории: {fruit.Nutritions.Calories}\r\n" +
+                             $"Жиры: {fruit.Nutritions.Fat}\r\n" +
+                             $"Сахар: {fruit.Nutritions.Sugar}\r\n" +
+                             $"Углеводы: {fruit.Nutritions.Carbohydrates}\r\n" +
+                             $"Белки: {fruit.Nutritions.Protein}";
+        }
+
+
+
     }
 
-   
 
-   
+
+
 }
